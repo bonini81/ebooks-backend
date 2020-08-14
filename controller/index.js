@@ -1,12 +1,12 @@
 const UsersController = require('./UsersController');
-const EnlacesController = require('./EnlacesController');
+const LibrosController = require('./LibrosController');
 
 
 
 module.exports = {
     
     UsersController,
-    EnlacesController,
+    LibrosController,
 
     }
     

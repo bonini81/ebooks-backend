@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const enlacesSchema = new Schema({
+const librosSchema = new Schema({
 
 
   link_url: {
@@ -40,6 +40,6 @@ const enlacesSchema = new Schema({
   timestamps: true,
 });
 
-const Enlaces = mongoose.model('Enlaces', enlacesSchema);
+const Libros = mongoose.model('Libros', librosSchema);
 
-module.exports = Enlaces;
+module.exports = Libros;

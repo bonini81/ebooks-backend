@@ -1,0 +1,35 @@
+const { LibrosService } = require('../services');
+
+module.exports = {
+
+
+    //Create
+    create: async (req, res) => {
+
+        try {
+        const enlace = await LibrosService.create(req.body);
+        res.status(201).send(libro);
+        }
+        catch (error) {
+        res.status(400).send({ message: 'Error creating a Libro', err });
+        }
+        
+    },
+
+     //GET ALL MY MAN
+  find: async (req, res) => {
+
+    try {
+      const enlace = await LibrosService.find();
+      res.status(200).send(libro);
+    }
+    
+    catch (error) {
+      res.status(404).send({ message: 'Libros not found', err });
+    }
+      
+  }
+
+
+
+}

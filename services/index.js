@@ -1,7 +1,7 @@
 const UsersService = require('./UsersService');
-const EnlacesService = require('./EnlacesService');
+const LibrosService = require('./LibrosService');
 
 module.exports = {
     UsersService,
-    EnlacesService,
+    LibrosService,
 }
