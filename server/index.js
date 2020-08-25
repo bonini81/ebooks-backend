@@ -10,7 +10,7 @@ server.use(express.json());
 server.use(cors());
 
 // Initial Endpoit
-server.get('/', (req, res) => res.send('Hello World! Welcome to my Ebook World, Madafaka!'));
+server.get('/', (req, res) => res.send('Hello World! Welcome to my Ebook World, Madafaka! Coño de tu manga'));
 
 
 //Basicamente aqui pido el enrutador y desde ahi se delega lo mas, cada uno a lo suyo
