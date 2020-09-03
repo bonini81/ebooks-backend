@@ -19,7 +19,7 @@ const verifyToken = (req, res, next) => {
 	next();
         
     } catch (error) {
-        res.status(403).send( {message: "Error with token", error} );
+        res.status(403).send( {message: "Error with token, madafaka", error} );
     }
  
 
