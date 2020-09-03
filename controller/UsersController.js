@@ -6,9 +6,7 @@ const utils = require('../utils');
 module.exports = {
 
   //CRUDs
-
-
-
+ 
 //Create
   create: async (req, res) => {
     try {
@@ -121,7 +119,7 @@ login: async (req, res) => {
     const isMatch = UsersService.comparePasswords(password, user.password);
     
     if (!isMatch) res.status(400).send({ message: 'Invalid credentials' });
-
+//Puede ser que aqui este el error
     const token = utils.createToken({
 
       id: user._id,
