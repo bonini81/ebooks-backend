@@ -26,11 +26,18 @@ const verifyToken = (req, res, next) => {
 }
 
 
+//Routes for SignUp Form and not Protected via Token, token not needed here
+router.post('/users/signup', UsersController.signup);
+router.post('/users/login', UsersController.login);
+
+// RUTAS QUE ESTAN PROTEGIDAS POR TOKEN Y REQUIEREN VERIFICACION
+router.use(verifyToken);
+
 //CREATE 
 router.post('/users', UsersController.create  );
 
 //GET (ALL)
-router.get('/users', verifyToken, UsersController.find);
+router.get('/users', UsersController.find);
 
 // GET (ONE!)
 router.get('/users/:id', UsersController.findById);
@@ -38,9 +45,7 @@ router.patch('/users/:id', UsersController.findByIdAndUpdate);
 router.delete('/users/:id', UsersController.findByIdAndDelete);
 
 
-//Routes for SignUp Form
-router.post('/users/signup', UsersController.signup);
-router.post('/users/login', UsersController.login);
+
 
 
 module.exports = router;
