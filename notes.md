@@ -1,2 +1,2 @@
 # JWT
-Me quede en clase 6 Black Belt 1:13 minutos
+Me quede en clase 6 Black Belt 2:00 minutos

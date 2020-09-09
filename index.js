@@ -8,3 +8,4 @@ require('./database');
 
 // Encedemos servidor
 server.listen(PORT, () => console.log(`Listening on ${PORT}`));
+
