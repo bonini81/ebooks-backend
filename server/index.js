@@ -1,8 +1,9 @@
 const express = require('express');
 const server = express();
 const cors = require('cors');
-const PORT = process.env.PORT || 3000;
 const {errors} = require('celebrate');
+const PORT = process.env.PORT || 3000;
+
 
 
 server.use(express.urlencoded({ extended: true }));
