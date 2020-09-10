@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const { UsersController } = require('../controller');
-//const { UsersValidator } = require('../validators');
+const { UsersValidator } = require('../validators');
 const UsersService = require('../services/UsersService');
 
-
 //CREATE 
-router.post('/users',  UsersController.create );
+router.post('/users',  UsersValidator.create, UsersController.create );
+
 //GET (ALL)
 router.get('/users', UsersController.find);
 // GET (ONE!)
