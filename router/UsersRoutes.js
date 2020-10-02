@@ -11,7 +11,7 @@ router.post('/users',  UsersValidator.create, UsersController.create );
 router.get('/users', UsersController.find);
 // GET (ONE!)
 router.get('/users/:id', UsersController.findById);
-router.patch('/users/:id', UsersController.findByIdAndUpdate);
+router.patch('/users/:id',  UsersController.findByIdAndUpdate);
 router.delete('/users/:id', UsersController.findByIdAndDelete);
 
 

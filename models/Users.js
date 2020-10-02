@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 //Below 2 Bcrypts dependencies
 const bcrypt = require('bcrypt');
 const SALT_WORK_FACTOR = 10;
+const { rolesSchema }  = require('./Roles');
+
 // End Bcrypt Dependencies
+
 
 const usersSchema = new Schema({
 
@@ -36,7 +39,8 @@ const usersSchema = new Schema({
     type: Boolean,
     default: true,
   },
-
+//Ejemplo de un modelado de datos embebido
+  roles: [rolesSchema]
 
 },
 {

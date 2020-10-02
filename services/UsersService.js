@@ -23,7 +23,12 @@ module.exports = {
                     
             return bcrypt.compareSync(candidatePassword, password);
         
-                }
+                },
+
+        addRole: (user, role) => {
+            user.roles.push(role);
+            return user.save();
+        }
         
 
 }

@@ -9,11 +9,12 @@ module.exports = {
     create: celebrate ({
 
         [Segments.BODY]: Joi.object().keys({
-          user_name: Joi.string().required(),
-          first_name: Joi.string().required(),
-          last_name: Joi.string().required(),
-          email: Joi.string().email().required(),
-          password: Joi.string(),
+         
+            roles: Joi.array().items(
+                Joi.object().keys({
+                  title: Joi.string().required(),
+                })).required(),
+
         }),
       
       }), 
@@ -21,19 +22,17 @@ module.exports = {
       update: celebrate ({
 
       [Segments.BODY]: Joi.object().keys({
-        user_name: Joi.string().required(),
-        first_name: Joi.string().required(),
-        last_name: Joi.string().required(),
-        email: Joi.string().email().required(),
-        password: Joi.string(),
+       
         roles: Joi.array().items(
         Joi.object().keys({
           title: Joi.string(),
-          is_active: Joi.boolean(),
         })
       )
       }),
     }),
+
+
+
 
 }; 
 
