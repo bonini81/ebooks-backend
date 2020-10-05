@@ -45,7 +45,7 @@ module.exports = {
   }
   
   catch (error) {
-    res.status(404).send({ message: 'Users not found', err });
+    res.status(404).send({ message: 'Users not found', error });
   }
     
 },

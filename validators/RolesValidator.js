@@ -10,28 +10,11 @@ module.exports = {
 
         [Segments.BODY]: Joi.object().keys({
          
-            roles: Joi.array().items(
-                Joi.object().keys({
-                  title: Joi.string().required(),
-                })).required(),
-
+            title: Joi.string().required(),
+      
         }),
       
-      }), 
-
-      update: celebrate ({
-
-      [Segments.BODY]: Joi.object().keys({
-       
-        roles: Joi.array().items(
-        Joi.object().keys({
-          title: Joi.string(),
-        })
-      )
-      }),
-    }),
-
-
+      })
 
 
 }; 

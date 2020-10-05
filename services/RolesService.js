@@ -6,9 +6,8 @@ module.exports = {
     create: (body)=> {
 	const newRole = new Roles(body);
 	return newRole;
-	},
+	}
      
-        
 
 }
 

@@ -5,7 +5,7 @@ const rolesSchema = new Schema ({
      
           title:  {
             type: String,
-            unique: true, 
+         
           },
 
           is_active: {

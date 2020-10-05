@@ -40,7 +40,7 @@ const usersSchema = new Schema({
     default: true,
   },
 //Ejemplo de un modelado de datos embebido
-  roles: [rolesSchema]
+  roles: [rolesSchema],
 
 },
 {
