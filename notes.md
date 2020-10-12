@@ -1,5 +1,5 @@
 # JWT
-Me quede en clase 7 Black Belt 2:23 minutos, a crear el delete en Roles Validator.
+Me quede en clase 8 Black Belt 49 minutos, a crear el delete en Roles Validator.
 
 
 

@@ -1,16 +1,29 @@
 const express = require('express');
 const server = express();
+const fileUpload = require('express-fileupload');
 const cors = require('cors');
-const {errors} = require('celebrate');
 const PORT = process.env.PORT || 3000;
-
+const {errors} = require('celebrate');
 
 
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
+server.use(fileUpload({
+    useTempFiles: true,
+    tempFileDir: '/tmp/',
+}));
+
 
 //Para que todos los endpoints puedan usar CORS, y sea mas seguro y heroku te deje hacerlo.
 server.use(cors());
+
+//File Upload End Point
+server.post('/upload', (req, res)=>  {
+
+    console.log(req.files.foto);
+    res.send('Esto es una prueba.');
+    
+    });
 
 // Initial Endpoit
 server.get('/', (req, res) => res.send('Hello World! Welcome to my Ebook World, Madafaka! Coño de tu manga'));
