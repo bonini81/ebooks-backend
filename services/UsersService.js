@@ -13,7 +13,7 @@ module.exports = {
      findByEmail: (email) => Users.findOne({email}),
      update: (user, body)  => {
         Object.assign(user, body);
-        return user.save;
+        return user.save();
         },
 
 
@@ -28,7 +28,8 @@ module.exports = {
         addRole: (user, role) => {
             user.roles.push(role);
             return user.save();
-        }
+        } 
+
         
 
 }

@@ -35,6 +35,10 @@ const usersSchema = new Schema({
 
   },
 
+  profile_img: {
+    type: String,
+  },
+
   is_active: {
     type: Boolean,
     default: true,

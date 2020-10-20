@@ -13,7 +13,7 @@ module.exports = {
       const user = await UsersService.create(req.body);
       res.status(201).send(user);
     }
-    catch (error) {
+    catch (err) {
       res.status(400).send({ message: 'Error creating user', err });
     }
      
@@ -27,7 +27,7 @@ module.exports = {
       res.status(200).send(users);
     }
     
-    catch (error) {
+    catch (err) {
       res.status(404).send({ message: 'Users not found', err });
     }
       
@@ -44,8 +44,8 @@ module.exports = {
     res.status(200).send(user);
   }
   
-  catch (error) {
-    res.status(404).send({ message: 'Users not found', error });
+  catch (err) {
+    res.status(404).send({ message: 'Users not found', err });
   }
     
 },
@@ -55,24 +55,31 @@ module.exports = {
 
 findByIdAndUpdate: async (req, res) => {
 
-  const { id } = req.params;
-  const {body} = req;
+if (req.files) {
+ 
+  const { photo } = req.files;
+  console.log("Hello", photo);
+  const upload = await utils.uploadFile(photo.tempFilePath);
+  if (upload) req.body.profile_img = upload.url;
+  
+}
+const { id } = req.params;
+const { body } = req;
 
   try {
     const user = await UsersService.findById(id);
     const updatedUser = await UsersService.update(user, body)
-    res.status(200).send(updatedUser);
-
+    res.status(200).send(updatedUser)
   }
   
-  catch (error) {
+  catch (err) {
   
-    res.status(404).send({ message: 'Users not found', err });
+    res.status(404).send({ message: 'Users not found wey', err });
+  
   }
 
 },
     
-
 //Update by Delete, aqui cambiamos el estado del user de activo a falso
 
 findByIdAndDelete: async (req, res) => {
@@ -86,7 +93,7 @@ findByIdAndDelete: async (req, res) => {
 
   }
   
-  catch (error) {
+  catch (err) {
   
     res.status(404).send({ message: 'Users not found', err });
   }
@@ -101,7 +108,7 @@ signup: async (req, res) => {
     const user = await UsersService.create(req.body);
     res.status(201).send(  {message: "Sign Up Succesfull Madafaka my Bonini Man",  user});
   }
-  catch (error) {
+  catch (err) {
     res.status(400).send({ message: 'Error creating user', err });
   }
    
@@ -129,9 +136,9 @@ login: async (req, res) => {
       });
 
     res.status(200).send({ message: "step inside, brother", token });
-  } catch (error) { 
-    console.log(error);
-    res.status(400).send({ message: 'Error on login', error });
+  } catch (err) { 
+    console.log(err);
+    res.status(400).send({ message: 'Error on login', err });
   }
 }
 

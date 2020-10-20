@@ -1,5 +1,5 @@
 # JWT
-Me quede en clase 8 Black Belt 1hora, a crear el delete en Roles Validator.
+Me quede en clase 8 Black Belt 1:30
 
 
 

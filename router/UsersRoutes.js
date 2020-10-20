@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { UsersController } = require('../controller');
 const { UsersValidator } = require('../validators');
-const UsersService = require('../services/UsersService');
+
 
 //CREATE 
 router.post('/users',  UsersValidator.create, UsersController.create );
