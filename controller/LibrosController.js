@@ -12,8 +12,10 @@ module.exports = {
         res.status(201).send(libro);
         }
         catch (error) {
+
         res.status(400).send({ message: 'Error creating a Libro', err });
-        }
+        
+      }
         
     },
 

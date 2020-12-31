@@ -4,17 +4,17 @@ const Schema = mongoose.Schema;
 const librosSchema = new Schema({
 
 
-  link_url: {
+  book_url: {
     type: String,
     required: true,
   },
 
-  link_title: {
+  book_title: {
     type: String,
     required: true,
   },
   
-  link_description: {
+  book_description: {
     type: String,
     required: true,
   },
