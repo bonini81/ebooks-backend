@@ -7,7 +7,8 @@ module.exports = {
     create: async (req, res) => {
 
         try {
-        const enlace = await LibrosService.create(req.body);
+          //before this const was const enlace not libro
+        const libro = await LibrosService.create(req.body);
         res.status(201).send(libro);
         }
         catch (error) {
