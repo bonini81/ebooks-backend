@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const librosSchema = new Schema({
 
-
+//This must be passed to upload format
   book_url: {
     type: String,
     required: true,
@@ -19,11 +19,15 @@ const librosSchema = new Schema({
     required: true,
   },
 
-  tag: {
+  book_category: {
     type: String,
     required: true,
   },
 
+  book_year: {
+    type: Number,
+    required: true,
+  },
 
   is_active: {
     type: Boolean,
