@@ -16,7 +16,6 @@ module.exports = {
         return user.save();
         },
 
-
         comparePasswords: (candidatePassword, password) => {
             
             console.log('Yahoo', candidatePassword, password);

@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000;
 const { errors } = require('celebrate');
 
 
+
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 server.use(fileUpload({
@@ -20,6 +21,14 @@ server.use(fileUpload({
  
 //Para que todos los endpoints puedan usar CORS, y sea mas seguro y heroku te deje hacerlo.
 server.use(cors());
+
+//Testing my CORS hypothesis bug solution
+server.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000/"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
 
 // Initial Endpoit
 server.get('/', (req, res) => res.send('Hello World! Welcome to my Ebook World, Madafaka! Coño de tu manga'));
