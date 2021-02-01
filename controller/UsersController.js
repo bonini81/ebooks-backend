@@ -11,6 +11,17 @@ module.exports = {
   create: async (req, res) => {
     try {
       const user = await UsersService.create(req.body);
+
+      // Send file to Cloudinary Script
+       
+  const { photo } = req.files;
+  console.log("Hello", photo);
+  const upload = await utils.uploadFile(photo.tempFilePath);
+  if (upload) req.body.profile_img = upload.url;
+
+
+      //END
+
       res.status(201).send(user);
     }
     catch (err) {
