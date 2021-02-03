@@ -107,7 +107,6 @@ findByIdAndDelete: async (req, res) => {
 //User SignUp
 signup: async (req, res) => {
   try {
-    const user = await UsersService.create(req.body);
 
        // Send file to Cloudinary Script
        
@@ -118,6 +117,9 @@ signup: async (req, res) => {
 
 
       //END
+    const user = await UsersService.create(req.body);
+
+    
 
 
     res.status(201).send(  {message: "Sign Up Succesfull Madafaka my Bonini Man",  user});
