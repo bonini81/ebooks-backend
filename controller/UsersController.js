@@ -115,7 +115,7 @@ signup: async (req, res) => {
   const upload = await utils.uploadFile(photo.tempFilePath);
   if (upload) req.body.profile_img = upload.url;
 
-
+console.log(req.body);
       //END
     const user = await UsersService.create(req.body);
 
