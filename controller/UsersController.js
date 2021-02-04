@@ -108,20 +108,10 @@ findByIdAndDelete: async (req, res) => {
 signup: async (req, res) => {
   try {
 
-       // Send file to Cloudinary Script
-       
-  const { photo } = req.files;
-  console.log("Hello", photo);
-  const upload = await utils.uploadFile(photo.tempFilePath);
-  if (upload) req.body.profile_img = upload.url;
-
-console.log(req.body);
-      //END
+    
     const user = await UsersService.create(req.body);
 
     
-
-
     res.status(201).send(  {message: "Sign Up Succesfull Madafaka my Bonini Man",  user});
   }
   catch (err) {
