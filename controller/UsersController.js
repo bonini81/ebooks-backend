@@ -1,7 +1,7 @@
 // El indice se encarga de pedir archivos e importarlos
 const { UsersService } = require('../services');
 const utils = require('../utils');
-const upload = require('../utils/multer');
+//const upload = require('../utils/multer');
 
 
 module.exports = {
