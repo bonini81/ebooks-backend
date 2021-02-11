@@ -136,7 +136,7 @@ findByIdAndDelete: async (req, res) => {
 
     try {
       
-      const user = await UsersService.create(req.body );
+      const user = await UsersService.create(body );
   
       res.status(201).send( {
       
