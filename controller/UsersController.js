@@ -1,6 +1,7 @@
 // El indice se encarga de pedir archivos e importarlos
 const { UsersService } = require('../services');
 const utils = require('../utils');
+const upload = require('../utils/multer');
 
 
 module.exports = {
@@ -104,21 +105,55 @@ findByIdAndDelete: async (req, res) => {
 },
 
 
-//User SignUp
-signup: async (req, res) => {
+//User SignUp Non Multer- Cloudinary version
+
+/* signup: async (req, res) => {
   try {
 
-    
+    req.body && req.file intenta esto
     const user = await UsersService.create(req.body);
 
-    
+
     res.status(201).send(  {message: "Sign Up Succesfull Madafaka my Bonini Man",  user});
-  }
+
+  } */
+
+
+
+  //User Sign Up Multer Version 
+
+  signup: async (req, res) => {
+
+    if (req.files) {
+ 
+      const { photo } = req.files;
+      console.log("Hello", photo);
+      const upload = await utils.uploadFile(photo.tempFilePath);
+      if (upload) req.body.profile_img = upload.url;
+      
+    }
+    const { body } = req;
+
+    try {
+      
+      const user = await UsersService.create(req.body );
+  
+      res.status(201).send( {
+      
+        message: "Sign Up Succesfull Madafaka my Bonini Man",  user
+      
+      } );
+  
+    } 
+
+
+  
   catch (err) {
     res.status(400).send({ message: 'Error creating user', err });
   }
    
 },
+
 
 
 //Login User 

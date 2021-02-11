@@ -2,10 +2,13 @@ const express = require('express');
 const router = express.Router();
 const { UsersController } = require('../controller');
 const { UsersValidator } = require('../validators');
-
+//agregando los utils de cloudinary y multer
+const utils = require('../utils');
+const upload = require('../utils/multer');
 
 //CREATE 
 router.post('/users',  UsersValidator.create, UsersController.create );
+// Multer version router.post('/users',  UsersValidator.create,  upload.single('profilePic'),  UsersController.create );
 
 //GET (ALL)
 router.get('/users', UsersController.find);
