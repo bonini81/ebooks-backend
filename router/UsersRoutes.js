@@ -4,7 +4,7 @@ const { UsersController } = require('../controller');
 const { UsersValidator } = require('../validators');
 //agregando los utils de cloudinary y multer
 const utils = require('../utils');
-const upload = require('../utils/multer');
+//const upload = require('../utils/multer');
 
 //CREATE 
 router.post('/users',  UsersValidator.create, UsersController.create );
