@@ -105,20 +105,24 @@ findByIdAndDelete: async (req, res) => {
 },
 
 
-
+//User SignUp Non Multer- Cloudinary version
 
  signup: async (req, res) => {
+
   try {
 
-    req.body && req.file intenta esto
     const user = await UsersService.create(req.body);
-
 
     res.status(201).send(  {message: "Sign Up Succesfull Madafaka my Bonini Man",  user});
 
+  } 
+
+
+  catch (err) {
+    res.status(400).send({ message: 'Error creating user', err });
   }
 
-
+},
 
   /*User Sign Up Multer Version 
 
