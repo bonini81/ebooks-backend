@@ -124,21 +124,21 @@ findByIdAndDelete: async (req, res) => {
 
   signup: async (req, res) => {
 
-
- 
+    if (req.files) {
+  
       const { photo } = req.files;
       console.log("Hello", photo);
       const upload = await utils.uploadFile(photo.tempFilePath);
       if (upload) req.body.profile_img = upload.url;
       //enviamos data de texto desde aca tambien en el body?
       
+    }
 
-
-    const { body } = req;
+    const { body } = req.files && req.body;
 
     try {
       
-      const user = await UsersService.create(body );
+      const user = await UsersService.create( body );
   
       res.status(201).send( {
       
