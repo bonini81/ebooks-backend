@@ -10,6 +10,8 @@ https://dev.to/itsmefarhan/cloudinary-files-images-crud-operations-with-nodejs-e
 
 Buen articulo. https://medium.com/javascript-in-plain-english/how-to-implement-an-image-upload-system-with-express-and-react-4a6511d8e097
 
+https://medium.com/swlh/uploading-images-to-your-node-js-backend-978261eb0724  (check it out)
+
 How to send form data and images with cloudinary, multer react js and node express
  
 https://www.codementor.io/@joejackson045/uploading-images-to-cloudinary-using-multer-and-expressjs-zthuy53oi
