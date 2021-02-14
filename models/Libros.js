@@ -45,7 +45,7 @@ const librosSchema = new Schema({
   },
 
 
-  //Populate from User
+  //Populate from User/
   added_by: [
     { type: Schema.Types.ObjectId, ref: 'Users' }
   ]
