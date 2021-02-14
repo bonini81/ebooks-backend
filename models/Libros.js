@@ -39,6 +39,12 @@ const librosSchema = new Schema({
     default: true,
   },
 
+
+  book_img: {
+    type: String,
+  },
+
+
   //Populate from User
   added_by: [
     { type: Schema.Types.ObjectId, ref: 'Users' }
