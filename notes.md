@@ -1,10 +1,13 @@
-# JWT
-Me quede en clase 8 Black Belt 1:30
+# Repaso de Cloudinary
+Clase 8 min 1h09min
 
 
 
 
 # File Upload Investigation
+
+Cloudinary Documentation on File Upload: https://cloudinary.com/documentation/node_image_and_video_upload
+Express File Upload una opcion mas simple para subir files en Node en vez de Multer  (tambien podria ser como agregar files y texto via express file upload)
 
 https://dev.to/itsmefarhan/cloudinary-files-images-crud-operations-with-nodejs-express-multer-2147 (VIDEO) minuto 13
 

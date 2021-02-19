@@ -24,7 +24,7 @@ module.exports = {
   find: async (req, res) => {
 
     try {
-      const enlace = await LibrosService.find();
+      const libro = await LibrosService.find();
       res.status(200).send(libro);
     }
     
